@@ -1,0 +1,170 @@
+// index.txt (Please read LICENSE.txt)
+
+== _Why I Love Lilypond_
+
+by Tom Swan
+
+When it comes to creating good-looking sheet music scores, Lilypond scores a 10 out of 10 from me. It's my top choice for engraving guitar scores, complete with fingerings and tablature plus whatever other musical markings I could possibly ever need. 
+
+Here's a sample of Lilypond's output -- a short chord melody of Happy Birthday for guitar that I whipped up for this article.
+
+.Happy Birthday
+:n: happy-birthday
+:t: {n}.{x}
+image::{n}.{y}[link={imagesdir}/{n}.{y}]
+*`{t}`*: link:{x}/{t}[Open]
+
+Here's a recording of me playing the score:
+
+.*`Happy Birthday MP3:`*
+audio::happy-birthday-chord-melody.mp3[options="controls"]
+
+I've tried most of the other popular music-typesetting choices -- programs such as Finale, Sibelius, and MuseScore. But I settled on Lilypond for reasons that I explain in this article. Today, I never use anything else for my guitar scores.
+
+- - -
+
+// -----------------------------------------------------------------
+
+=== What is Lilypond?
+
+Lilypond is both a language and a computer program that can read music written in Lilypond (the language) and create a publishable PDF file with a perfectly engraved rendition of the music, complete with all the elements we guitarists usually want: left- and right-hand fingerings, string numbers, chord diagrams and chord names, and that must-have feature especially for those who don't read standard notation -- tablature.
+
+NOTE: Lilypond can also produce a MIDI representation of any score. And it isn't limited to guitar music. The software can handle just about any known musical or percussive instrument (really!) and it can easily satisfy even the most exacting engraving needs, from simple lead sheets up to demanding orchestral works. For more information, and to download Lilypond, follow this link: {lilypond}
+
+- - -
+
+// -----------------------------------------------------------------
+
+=== Do I Have to Be a Programmer?
+
+Don't let the word "`language`" put you off. No, you don't need to be a computer programmer to understand and use Lilypond. It's not anywhere near as complicated as a general-purpose programming language such as C++ or Java.
+
+In fact, Lilypond isn't really a programming language at all. Think of it instead as a _scripting tool,_ a simple means by which you can have a conversation with a computer -- in this case, a dialog specifically about a song you want the computer to nicely and neatly engrave.
+
+TIP: What's more, the price is right. Did I mention that Lilypond is 100% free software? Good price!
+
+- - -
+
+// -----------------------------------------------------------------
+
+=== How Does it Work?
+
+Writing music with Lilypond is similar to writing computer code only in that you use a common text editor for input. In plain text, you write down your song's notes and chords, a title, your name perhaps as composer, and details such as fingerings and string numbers using easily learned conventions that may seem cryptic at first, but in time will make better sense.
+
+Let's take a look at a few simple scores so you can begin to understand LilyPond's ways. Here's a simple engraving of a C Major scale that I created using LilyPond:
+
+.C Major Scale
+:n: c-major-ed
+:t: {n}.{x}
+image::{n}.{y}[link={imagesdir}/{n}.{y}]
+
+Here's the _entire_ LilyPond script that created the engraved image (minus a `version` statement that doesn't interest us here):
+
+[source,Lilypond]  
+----
+\new Staff {
+  \clef "treble_8"
+  \relative c {
+    c d e f | g a b c |
+  }
+}
+----
+
+Try to match up the text with the image, but don't be concerned with understanding everything at first. Indentation helps organize the parts of a LilyPond score in text form. You could write the entire score on one line and the results will be the same, but the text will not be as easy to read. 
+
+Braces `{` and `}` enclose the contents of a `new Staff` containing a `clef` declaration, and stating that the music is relative to the note C. Finally the scale notes in lowercase inside a second pair of braces `{c, d, e, ...}` are listed between vertical bars that resemble the bars of the engraved score's measures. 
+
+NOTE: The text bars are not required, but using them helps you to visualize your score in text form and keeps your music organized. With bars, LilyPond can check whether your notes correctly fill out each measure -- the program warns you if not.
+
+The "8" in `treble_8` and just below the clef in the engraved score indicate that, if this tune is to be played similarly on a piano, the notes must be lowered one octave because a guitar's middle C is the same frequency as C _below_ middle C on the piano. 
+
+LilyPond needs to know in which octave to position your music. That's what the `relative` statement does.
+
+Need tabs in your score? Here's the same scale in a tablature staff showing the notes to play on the guitar fretboard.
+
+.C Major Tablature
+:n: c-major-tab-only-ed
+:t: {n}.{x}
+image::{n}.{y}[link={imagesdir}/{n}.{y}]
+
+The text for the tablature engraving is almost the same as for the standard staff:
+
+[source,Lilypond]  
+----
+\new TabStaff {
+  \relative c {
+    c d e f | g a b c |
+  }
+}
+----
+
+All I did was take out the `clef` statement and change `Staff` to `TabStaff`. The notes are identical.
+
+As you probably know, most guitar scores join the staves together and align the notes. Here's the finished score. Looking good!
+
+.C Major With Tablature
+:n: c-major-tab-ed
+:t: {n}.{x}
+image::{n}.{y}[link={imagesdir}/{n}.{y}]
+
+- - -
+
+// -----------------------------------------------------------------
+
+=== Learning to Speak LilyPond
+
+Reading through LilyPond scores in text form is probably the best way to learn to speak LP. 
+
+TIP: The LilyPond web site offers a great tutorial and contains a seemingly bottomless archive of "`snippets`" and samples for probably everything you'll ever want to accomplish. Just copy the code, make a few changes, and add it to your score. You don't need to become totally fluent in LilyPond in order to use it effectively.
+
+Still, some of the conventions and syntax rules can take a bit of pondering to understand. One reason for its cryptic reputation is that Lilypond is a _terse_ language. But that's good. It's kind of like the ultimate shorthand for jotting down, with precision, all the elements of a song -- a repeated section, for example, alternate endings, coda, the key, time signatures, stuff like ties and rests, chord diagrams, and on and on. 
+
+All such common elements are simple and easy to specify. I just tell Lilypond that I want a rest here and a tie there, and it figures out how best to engrave the end result. It can even handle multi-verse lyrics. Unlike with other programs, with Lilypond, _I never have to deal with any drawing commands or graphics objects at all!_
+
+For a real life example, follow this link to view the entire text of my Happy Birthday score from the beginning of the article:
+
+*`Happy Birthday Source`*: link:source/happy-birthday.ly[View]
+
+// -----------------------------------------------------------------
+
+=== How to Compile Happy Birthday
+
+To compile the sample source code and produce a PDF document of the score, link:http://lilypond.org[install] the software if necessary, go into source/ and type `lilypond` plus the source-code .ly filename. If all goes well, open the resulting PDF file to see the finished score (here, I use the command-line xdg-open, which opens any file in the preferred application).
+
+----
+$ cd source
+$ lilypond happy-birthday.ly 
+GNU LilyPond 2.18.2
+Processing `happy-birthday.ly'
+Parsing...
+Interpreting music...[8]
+...
+Success: compilation successfully completed
+$ xdg-open happy-birthday.pdf 
+----
+
+NOTE: The separate program _Frescobaldi_ provides a text editor and extensive drop-down menu commands for running Lilypond without having to use a command-line prompt -- which only programmers can possibly love, right? For what is probably the easiest way to get started with Lilypond, check out {frescobaldi}.
+
+- - -
+
+// -----------------------------------------------------------------
+
+=== Thinking in Lilypond
+
+Honestly, I don't understand why music publishers continue to use the other programs I mentioned such as Finale and Sibelius. Capable as they are, they are all in the end _graphics drawing programs._ With those and similar CAD (Computer Aided Design) systems, you are forced to think in terms of graphics and typesetting objects and rules. 
+
+With Lilypond, however, you instead think in terms that are probably more familiar to you -- _musical_ terms. You don't deal with notes as graphics shapes. You simply write down what the notes _are._ Lilypond knows what they're supposed to look like. 
+
+NOTE: Lilypond has tweaks for doing all kinds of fancy layout work, moving things around, editing tablature entries and markings, and making fine adjustments. It is virtually unrestricted in output capabilities -- but I rarely use the fancier features because the default settings already work so well out of the box.
+
+Can you tell? I love LilyPond!
+
+- - -
+
+// -----------------------------------------------------------------
+
+Website: http://www.tomswan.com
+
+GitHub: https://github.com/TomSwan/why-i-love-lilypond
+
+Raw Text: link:{source}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="description" content="Official site for author Tom Swan">
+<meta name="keywords" content="COMPUTER PROGRAMMING GUITAR MUSIC LINUX C C++ PASCAL">
+<meta name="copyright" content="© 2019 by Tom Swan">
+<link rel="icon" type="image/png" href="image/favicon.png">
+<title>Why I Love Lilypond</title>
+<link rel="stylesheet" href="css/tomswan.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#why-i-love-lilypond"><em>Why I Love Lilypond</em></a>
+<ul class="sectlevel2">
+<li><a href="#what-is-lilypond">What is Lilypond?</a></li>
+<li><a href="#do-i-have-to-be-a-programmer">Do I Have to Be a Programmer?</a></li>
+<li><a href="#how-does-it-work">How Does it Work?</a></li>
+<li><a href="#learning-to-speak-lilypond">Learning to Speak LilyPond</a></li>
+<li><a href="#how-to-compile-happy-birthday">How to Compile Happy Birthday</a></li>
+<li><a href="#thinking-in-lilypond">Thinking in Lilypond</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="paragraph">
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="4HZQAX64W6TWE" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
+</p>
+</div>
+<div class="paragraph">
+<p>License Text: <a href="LICENSE.txt">Please Read</a></p>
+</div>
+<hr>
+<div class="sect1">
+<h2 id="why-i-love-lilypond"><a class="anchor" href="#why-i-love-lilypond"></a><em>Why I Love Lilypond</em></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>by Tom Swan</p>
+</div>
+<div class="paragraph">
+<p>When it comes to creating good-looking sheet music scores, Lilypond scores a 10 out of 10 from me. It&#8217;s my top choice for engraving guitar scores, complete with fingerings and tablature plus whatever other musical markings I could possibly ever need.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a sample of Lilypond&#8217;s output&#8201;&#8212;&#8201;a short chord melody of Happy Birthday for guitar that I whipped up for this article.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="image/happy-birthday.png"><img src="image/happy-birthday.png" alt="happy birthday"></a>
+</div>
+<div class="title">Happy Birthday</div>
+</div>
+<div class="paragraph">
+<p><strong><code>happy-birthday.pdf</code></strong>: <a href="pdf/happy-birthday.pdf">Open</a></p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a recording of me playing the score:</p>
+</div>
+<div class="audioblock">
+<div class="title"><strong><code>Happy Birthday MP3:</code></strong></div>
+<div class="content">
+<audio src="image/happy-birthday-chord-melody.mp3" controls>
+Your browser does not support the audio tag.
+</audio>
+</div>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve tried most of the other popular music-typesetting choices&#8201;&#8212;&#8201;programs such as Finale, Sibelius, and MuseScore. But I settled on Lilypond for reasons that I explain in this article. Today, I never use anything else for my guitar scores.</p>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="what-is-lilypond"><a class="anchor" href="#what-is-lilypond"></a>What is Lilypond?</h3>
+<div class="paragraph">
+<p>Lilypond is both a language and a computer program that can read music written in Lilypond (the language) and create a publishable PDF file with a perfectly engraved rendition of the music, complete with all the elements we guitarists usually want: left- and right-hand fingerings, string numbers, chord diagrams and chord names, and that must-have feature especially for those who don&#8217;t read standard notation&#8201;&#8212;&#8201;tablature.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Lilypond can also produce a MIDI representation of any score. And it isn&#8217;t limited to guitar music. The software can handle just about any known musical or percussive instrument (really!) and it can easily satisfy even the most exacting engraving needs, from simple lead sheets up to demanding orchestral works. For more information, and to download Lilypond, follow this link: <a href="http://lilypond.org/">Lilypond</a>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="do-i-have-to-be-a-programmer"><a class="anchor" href="#do-i-have-to-be-a-programmer"></a>Do I Have to Be a Programmer?</h3>
+<div class="paragraph">
+<p>Don&#8217;t let the word &#8220;language&#8221; put you off. No, you don&#8217;t need to be a computer programmer to understand and use Lilypond. It&#8217;s not anywhere near as complicated as a general-purpose programming language such as C++ or Java.</p>
+</div>
+<div class="paragraph">
+<p>In fact, Lilypond isn&#8217;t really a programming language at all. Think of it instead as a <em>scripting tool,</em> a simple means by which you can have a conversation with a computer&#8201;&#8212;&#8201;in this case, a dialog specifically about a song you want the computer to nicely and neatly engrave.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+What&#8217;s more, the price is right. Did I mention that Lilypond is 100% free software? Good price!
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="how-does-it-work"><a class="anchor" href="#how-does-it-work"></a>How Does it Work?</h3>
+<div class="paragraph">
+<p>Writing music with Lilypond is similar to writing computer code only in that you use a common text editor for input. In plain text, you write down your song&#8217;s notes and chords, a title, your name perhaps as composer, and details such as fingerings and string numbers using easily learned conventions that may seem cryptic at first, but in time will make better sense.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at a few simple scores so you can begin to understand LilyPond&#8217;s ways. Here&#8217;s a simple engraving of a C Major scale that I created using LilyPond:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="image/c-major-ed.png"><img src="image/c-major-ed.png" alt="c major ed"></a>
+</div>
+<div class="title">C Major Scale</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s the <em>entire</em> LilyPond script that created the engraved image (minus a <code>version</code> statement that doesn&#8217;t interest us here):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="Lilypond">\new Staff {
+  \clef "treble_8"
+  \relative c {
+    c d e f | g a b c |
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Try to match up the text with the image, but don&#8217;t be concerned with understanding everything at first. Indentation helps organize the parts of a LilyPond score in text form. You could write the entire score on one line and the results will be the same, but the text will not be as easy to read.</p>
+</div>
+<div class="paragraph">
+<p>Braces <code>{</code> and <code>}</code> enclose the contents of a <code>new Staff</code> containing a <code>clef</code> declaration, and stating that the music is relative to the note C. Finally the scale notes in lowercase inside a second pair of braces <code>{c, d, e, &#8230;&#8203;}</code> are listed between vertical bars that resemble the bars of the engraved score&#8217;s measures.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The text bars are not required, but using them helps you to visualize your score in text form and keeps your music organized. With bars, LilyPond can check whether your notes correctly fill out each measure&#8201;&#8212;&#8201;the program warns you if not.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The "8" in <code>treble_8</code> and just below the clef in the engraved score indicate that, if this tune is to be played similarly on a piano, the notes must be lowered one octave because a guitar&#8217;s middle C is the same frequency as C <em>below</em> middle C on the piano.</p>
+</div>
+<div class="paragraph">
+<p>LilyPond needs to know in which octave to position your music. That&#8217;s what the <code>relative</code> statement does.</p>
+</div>
+<div class="paragraph">
+<p>Need tabs in your score? Here&#8217;s the same scale in a tablature staff showing the notes to play on the guitar fretboard.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="image/c-major-tab-only-ed.png"><img src="image/c-major-tab-only-ed.png" alt="c major tab only ed"></a>
+</div>
+<div class="title">C Major Tablature</div>
+</div>
+<div class="paragraph">
+<p>The text for the tablature engraving is almost the same as for the standard staff:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="Lilypond">\new TabStaff {
+  \relative c {
+    c d e f | g a b c |
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All I did was take out the <code>clef</code> statement and change <code>Staff</code> to <code>TabStaff</code>. The notes are identical.</p>
+</div>
+<div class="paragraph">
+<p>As you probably know, most guitar scores join the staves together and align the notes. Here&#8217;s the finished score. Looking good!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="image/c-major-tab-ed.png"><img src="image/c-major-tab-ed.png" alt="c major tab ed"></a>
+</div>
+<div class="title">C Major With Tablature</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="learning-to-speak-lilypond"><a class="anchor" href="#learning-to-speak-lilypond"></a>Learning to Speak LilyPond</h3>
+<div class="paragraph">
+<p>Reading through LilyPond scores in text form is probably the best way to learn to speak LP.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The LilyPond web site offers a great tutorial and contains a seemingly bottomless archive of &#8220;snippets&#8221; and samples for probably everything you&#8217;ll ever want to accomplish. Just copy the code, make a few changes, and add it to your score. You don&#8217;t need to become totally fluent in LilyPond in order to use it effectively.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Still, some of the conventions and syntax rules can take a bit of pondering to understand. One reason for its cryptic reputation is that Lilypond is a <em>terse</em> language. But that&#8217;s good. It&#8217;s kind of like the ultimate shorthand for jotting down, with precision, all the elements of a song&#8201;&#8212;&#8201;a repeated section, for example, alternate endings, coda, the key, time signatures, stuff like ties and rests, chord diagrams, and on and on.</p>
+</div>
+<div class="paragraph">
+<p>All such common elements are simple and easy to specify. I just tell Lilypond that I want a rest here and a tie there, and it figures out how best to engrave the end result. It can even handle multi-verse lyrics. Unlike with other programs, with Lilypond, <em>I never have to deal with any drawing commands or graphics objects at all!</em></p>
+</div>
+<div class="paragraph">
+<p>For a real life example, follow this link to view the entire text of my Happy Birthday score from the beginning of the article:</p>
+</div>
+<div class="paragraph">
+<p><strong><code>Happy Birthday Source</code></strong>: <a href="source/happy-birthday.ly">View</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-compile-happy-birthday"><a class="anchor" href="#how-to-compile-happy-birthday"></a>How to Compile Happy Birthday</h3>
+<div class="paragraph">
+<p>To compile the sample source code and produce a PDF document of the score, <a href="http://lilypond.org">install</a> the software if necessary, go into source/ and type <code>lilypond</code> plus the source-code .ly filename. If all goes well, open the resulting PDF file to see the finished score (here, I use the command-line xdg-open, which opens any file in the preferred application).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd source
+$ lilypond happy-birthday.ly
+GNU LilyPond 2.18.2
+Processing `happy-birthday.ly'
+Parsing...
+Interpreting music...[8]
+...
+Success: compilation successfully completed
+$ xdg-open happy-birthday.pdf</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The separate program <em>Frescobaldi</em> provides a text editor and extensive drop-down menu commands for running Lilypond without having to use a command-line prompt&#8201;&#8212;&#8201;which only programmers can possibly love, right? For what is probably the easiest way to get started with Lilypond, check out <a href="http://www.frescobaldi.org/download.html">Frescobaldi</a>.
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="thinking-in-lilypond"><a class="anchor" href="#thinking-in-lilypond"></a>Thinking in Lilypond</h3>
+<div class="paragraph">
+<p>Honestly, I don&#8217;t understand why music publishers continue to use the other programs I mentioned such as Finale and Sibelius. Capable as they are, they are all in the end <em>graphics drawing programs.</em> With those and similar CAD (Computer Aided Design) systems, you are forced to think in terms of graphics and typesetting objects and rules.</p>
+</div>
+<div class="paragraph">
+<p>With Lilypond, however, you instead think in terms that are probably more familiar to you&#8201;&#8212;&#8201;<em>musical</em> terms. You don&#8217;t deal with notes as graphics shapes. You simply write down what the notes <em>are.</em> Lilypond knows what they&#8217;re supposed to look like.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Lilypond has tweaks for doing all kinds of fancy layout work, moving things around, editing tablature entries and markings, and making fine adjustments. It is virtually unrestricted in output capabilities&#8201;&#8212;&#8201;but I rarely use the fancier features because the default settings already work so well out of the box.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Can you tell? I love LilyPond!</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>Website: <a href="http://www.tomswan.com" class="bare">http://www.tomswan.com</a></p>
+</div>
+<div class="paragraph">
+<p>GitHub: <a href="https://github.com/TomSwan/why-i-love-lilypond" class="bare">https://github.com/TomSwan/why-i-love-lilypond</a></p>
+</div>
+<div class="paragraph">
+<p>Raw Text: <a href="index.txt">Read</a></p>
+</div>
+<div class="paragraph">
+<p>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57b23734d75ce630"></script>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2019-10-02 14:56:51 -0400
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+</body>
+</html>

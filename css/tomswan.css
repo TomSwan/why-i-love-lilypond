@@ -1,0 +1,18 @@
+@import url("tomswan-inc.css");
+
+body {  
+  width: 75%;
+  float: right;
+  margin-right: 12.5%
+}
+
+#footer-text {
+  color: white;
+  text-align: center 
+}
+
+#footer-text a { text-decoration: none; }
+#footer-text a:link { color: yellow; }
+#footer-text a:visited { color: yellow; }
+#footer-text a:hover { text-decoration: underline; }
+#footer-text a:active { text-decoration: underline; }
