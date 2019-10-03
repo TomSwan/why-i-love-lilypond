@@ -28,6 +28,8 @@ For more stuff, browse my repositories on GitHub. It's where I store all of my d
 
 Please also follow the links below to visit my web site and YouTube channel. Write to me at tom@tomswan.com. Good luck!
 
-http://www.tomswan.com
+Website: http://www.tomswan.com
 
-https://www.youtube.com/user/TomSwanPlaysGuitar
+GitHub: https://github.com/TomSwan
+
+YouTube: https://www.youtube.com/user/TomSwanPlaysGuitar
