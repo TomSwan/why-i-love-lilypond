@@ -12,7 +12,7 @@ Here's a recording of me playing the score:
 
 ## Continue reading...
 
-http://www.tomswan.com/pub/why-i-love-lilypond/
+http://www.tomswan.com/articles/why-i-love-lilypond.html
 
 ## Using the Files
 
