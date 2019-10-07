@@ -1,3 +1,5 @@
+// README.adoc
+
 = Why I Love Lilypond
 
 When it comes to creating good-looking sheet music scores, Lilypond scores a 10 out of 10 from me. It's my top choice for engraving guitar scores, complete with fingerings and tablature plus whatever other musical markings I could possibly ever need. 
@@ -8,9 +10,15 @@ image::image/happy-birthday.png[]
 
 Here's a recording of me playing the score:
 
+// -----------------------------------------------------------------
+
 == Continue reading...
 
 http://www.tomswan.com/articles/why-i-love-lilypond.html
+
+- - -
+
+// -----------------------------------------------------------------
 
 == Using the Files
 
@@ -19,6 +27,10 @@ Read the full article for an introduction to Lilypond text markup, plus get the 
 Or, download or clone the repository if you want everything, including the published article's AsciiDoc source files. You can also extract PDF and other files directly from the GitHub repo. Everything is here.
 
 -    *Support Open Source! -- It's not only for code!*
+
+- - -
+
+// -----------------------------------------------------------------
 
 == More Information
 
