@@ -26,8 +26,6 @@ Read the full article for an introduction to Lilypond text markup, plus get the 
 
 Or, download or clone the repository if you want everything, including the published article's AsciiDoc source files. You can also extract PDF and other files directly from the GitHub repo. Everything is here.
 
--    *Support Open Source! -- It's not only for code!*
-
 - - -
 
 // -----------------------------------------------------------------
