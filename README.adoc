@@ -14,7 +14,7 @@ Here's a recording of me playing the score:
 
 == Continue reading...
 
-http://www.tomswan.com/articles/why-i-love-lilypond.html
+https://www.tomswan.com/articles/why-i-love-lilypond.html
 
 - - -
 
@@ -36,7 +36,7 @@ For more stuff, browse my repositories on GitHub. It's where I store all of my d
 
 Please also follow the links below to visit my web site and YouTube channel. Write to me at tom@tomswan.com. Good luck!
 
-Website: http://www.tomswan.com
+Website: https://www.tomswan.com
 
 GitHub: https://github.com/TomSwan
 

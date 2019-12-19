@@ -163,7 +163,7 @@ Can you tell? I love LilyPond!
 
 // -----------------------------------------------------------------
 
-Website: http://www.tomswan.com
+Website: https://www.tomswan.com
 
 GitHub: https://github.com/TomSwan/why-i-love-lilypond
 
