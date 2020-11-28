@@ -1,4 +1,4 @@
-// index.txt (Please read LICENSE.txt)
+// index.txt
 
 == _Why I Love Lilypond_
 
